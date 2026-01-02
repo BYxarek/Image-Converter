@@ -1,5 +1,6 @@
 import json
 import math
+import sys
 import time
 from pathlib import Path
 import tkinter as tk
@@ -22,8 +23,9 @@ QUALITY_PRESETS = {
     "compact": {"WEBP": {"lossless": False, "quality": 70, "method": 4}, "JPEG": {"quality": 70}},
 }
 CHUNK_SIZE = 1024 * 256
-CONFIG_PATH = Path("settings.json")
-STRINGS_PATH = Path("strings.json")
+BASE_DIR = Path(sys.executable).parent if getattr(sys, "frozen", False) else Path(__file__).resolve().parent
+CONFIG_PATH = BASE_DIR / "settings.json"
+STRINGS_PATH = BASE_DIR / "strings.json"
 WINDOW_SIZE = (720, 720)
 COLORS = {
     "bg": "#0b1220",
