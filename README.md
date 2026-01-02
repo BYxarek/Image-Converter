@@ -34,33 +34,10 @@ python main.py
 - WEBP is lossless by default (can be changed via preset).
 - JPEG uses high quality and optimization.
 
-### Build (EXE)
-```bash
-python -m pip install pyinstaller
-pyinstaller --onefile --windowed --clean --name ImageConverter --add-data "strings.json;." main.py
-```
-Result: `dist/ImageConverter.exe`
-
-### Build (APK)
-APK build requires Linux (or WSL). One option is Buildozer:
-```bash
-python -m pip install buildozer
-buildozer init
-```
-Then edit `buildozer.spec` (set `requirements = python3,tkinter,Pillow,tkinterdnd2`) and run:
-```bash
-buildozer -v android debug
-```
-APK will be in `bin/`.
-
 ### Structure
 - `main.py` — application
 - `requirements.txt` — dependencies
-
-### Ideas for future
-- Progress by conversion stages and detailed log
-- Preset profiles and last-used settings
-- Batch resizing and filters
+ - `strings.json` — localization strings
 
 ## Русский
 
@@ -94,30 +71,7 @@ python main.py
 - Для WEBP используется lossless по умолчанию (можно изменить пресетом).
 - Для JPEG включено высокое качество и оптимизация.
 
-### Сборка (EXE)
-```bash
-python -m pip install pyinstaller
-pyinstaller --onefile --windowed --clean --name ImageConverter --add-data "strings.json;." main.py
-```
-Результат: `dist/ImageConverter.exe`
-
-### Сборка (APK)
-Сборка APK требует Linux (или WSL). Один из вариантов — Buildozer:
-```bash
-python -m pip install buildozer
-buildozer init
-```
-Далее правим `buildozer.spec` (указать `requirements = python3,tkinter,Pillow,tkinterdnd2`) и запускаем:
-```bash
-buildozer -v android debug
-```
-APK появится в `bin/`.
-
 ### Структура
 - `main.py` — приложение
 - `requirements.txt` — зависимости
-
-### Идеи для развития
-- Прогресс по шагам конвертации и детальный лог
-- Профили настроек и сохранение последних параметров
-- Добавление resizing и пакетных фильтров
+ - `strings.json` — локализация
